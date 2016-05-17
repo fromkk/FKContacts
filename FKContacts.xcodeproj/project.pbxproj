@@ -137,10 +137,10 @@
 		4F0E400C1CEB261B0056CD59 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4F0E40151CEB2B420056CD59 /* ABContacts.swift */,
-				4F0E40161CEB2B420056CD59 /* CNContacts.swift */,
 				4F0E40171CEB2B420056CD59 /* FKContacts.swift */,
 				4F0E40181CEB2B420056CD59 /* FKContactItem.swift */,
+				4F0E40151CEB2B420056CD59 /* ABContacts.swift */,
+				4F0E40161CEB2B420056CD59 /* CNContacts.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -508,6 +508,7 @@
 				4F0E40051CEB26160056CD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F0E40061CEB26160056CD59 /* Build configuration list for PBXNativeTarget "FKContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +517,7 @@
 				4F0E40081CEB26160056CD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F0E40091CEB26160056CD59 /* Build configuration list for PBXNativeTarget "FKContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +526,7 @@
 				4F0E400B1CEB26160056CD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

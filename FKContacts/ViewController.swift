@@ -12,6 +12,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FKContacts.requestPermission { (status) in
+            switch status
+            {
+            case FKContactsPermissionResults.Allowed:
+                print("allowed!!!")
+                
+                do {
+                    let result: [FKContactItem] = try FKContacts.fetchContacts()
+                    print("result! \(result)")
+                } catch
+                {
+                    print("failed...")
+                }
+                break
+            case FKContactsPermissionResults.Denied:
+                print("denied...")
+                break
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

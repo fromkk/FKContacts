@@ -15,5 +15,4 @@ public struct FKContactItem
     public var lastKane: String?
     public var firstKana: String?
     public var email: String?
-    public var phoneNumber: String?
 }

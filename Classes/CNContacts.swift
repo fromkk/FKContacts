@@ -54,7 +54,27 @@ extension CNContact: FKContactsProtocol
 {
     public static func fetchContacts() throws -> [FKContactItem] {
         var result: [FKContactItem] = []
-
+        let store: CNContactStore = CNContactStore()
+        let request: CNContactFetchRequest = CNContactFetchRequest(keysToFetch: [
+            CNContactGivenNameKey,
+            CNContactFamilyNameKey,
+            CNContactPhoneticGivenNameKey,
+            CNContactPhoneticFamilyNameKey,
+            CNContactEmailAddressesKey
+            ])
+        do {
+            try store.enumerateContactsWithFetchRequest(request) { (contact, stop) in
+                contact.emailAddresses.forEach { (labeledValue: CNLabeledValue) in
+                    if let emailAddress: String = labeledValue.value as? String
+                    {
+                        result.append(FKContactItem(lastName: contact.givenName, firstName: contact.familyName, lastKane: contact.phoneticGivenName, firstKana: contact.phoneticFamilyName, email: emailAddress))
+                    }
+                }
+            }
+        } catch {
+            throw FKContactsErrorType.FetchFailed
+        }
+        
         return result
     }
 }
