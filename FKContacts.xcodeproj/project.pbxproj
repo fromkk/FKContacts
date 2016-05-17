@@ -14,6 +14,10 @@
 		4F0E3FE91CEB26160056CD59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0E3FE71CEB26160056CD59 /* LaunchScreen.storyboard */; };
 		4F0E3FF41CEB26160056CD59 /* FKContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E3FF31CEB26160056CD59 /* FKContactsTests.swift */; };
 		4F0E3FFF1CEB26160056CD59 /* FKContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E3FFE1CEB26160056CD59 /* FKContactsUITests.swift */; };
+		4F0E40191CEB2B420056CD59 /* ABContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40151CEB2B420056CD59 /* ABContacts.swift */; };
+		4F0E401A1CEB2B420056CD59 /* CNContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40161CEB2B420056CD59 /* CNContacts.swift */; };
+		4F0E401B1CEB2B420056CD59 /* FKContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40171CEB2B420056CD59 /* FKContacts.swift */; };
+		4F0E401C1CEB2B420056CD59 /* FKContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40181CEB2B420056CD59 /* FKContactItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		4F0E3FFA1CEB26160056CD59 /* FKContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FKContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0E3FFE1CEB26160056CD59 /* FKContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKContactsUITests.swift; sourceTree = "<group>"; };
 		4F0E40001CEB26160056CD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F0E40151CEB2B420056CD59 /* ABContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABContacts.swift; sourceTree = "<group>"; };
+		4F0E40161CEB2B420056CD59 /* CNContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContacts.swift; sourceTree = "<group>"; };
+		4F0E40171CEB2B420056CD59 /* FKContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKContacts.swift; sourceTree = "<group>"; };
+		4F0E40181CEB2B420056CD59 /* FKContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKContactItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		4F0E3FD21CEB26160056CD59 = {
 			isa = PBXGroup;
 			children = (
+				4F0E400C1CEB261B0056CD59 /* Classes */,
 				4F0E3FDD1CEB26160056CD59 /* FKContacts */,
 				4F0E3FF21CEB26160056CD59 /* FKContactsTests */,
 				4F0E3FFD1CEB26160056CD59 /* FKContactsUITests */,
@@ -123,6 +132,17 @@
 				4F0E40001CEB26160056CD59 /* Info.plist */,
 			);
 			path = FKContactsUITests;
+			sourceTree = "<group>";
+		};
+		4F0E400C1CEB261B0056CD59 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4F0E40151CEB2B420056CD59 /* ABContacts.swift */,
+				4F0E40161CEB2B420056CD59 /* CNContacts.swift */,
+				4F0E40171CEB2B420056CD59 /* FKContacts.swift */,
+				4F0E40181CEB2B420056CD59 /* FKContactItem.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +278,10 @@
 			files = (
 				4F0E3FE11CEB26160056CD59 /* ViewController.swift in Sources */,
 				4F0E3FDF1CEB26160056CD59 /* AppDelegate.swift in Sources */,
+				4F0E401C1CEB2B420056CD59 /* FKContactItem.swift in Sources */,
+				4F0E401B1CEB2B420056CD59 /* FKContacts.swift in Sources */,
+				4F0E40191CEB2B420056CD59 /* ABContacts.swift in Sources */,
+				4F0E401A1CEB2B420056CD59 /* CNContacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FKContacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FKContacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
