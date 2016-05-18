@@ -67,7 +67,7 @@ extension CNContact: FKContactsProtocol
                 contact.emailAddresses.forEach { (labeledValue: CNLabeledValue) in
                     if let emailAddress: String = labeledValue.value as? String
                     {
-                        result.append(FKContactItem(lastName: contact.givenName, firstName: contact.familyName, lastKane: contact.phoneticGivenName, firstKana: contact.phoneticFamilyName, email: emailAddress))
+                        result.append(FKContactItem(lastName: contact.givenName, firstName: contact.familyName, lastKana: contact.phoneticGivenName, firstKana: contact.phoneticFamilyName, email: emailAddress))
                     }
                 }
             }

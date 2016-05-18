@@ -12,7 +12,7 @@ public struct FKContactItem
 {
     public var lastName: String?
     public var firstName: String?
-    public var lastKane: String?
+    public var lastKana: String?
     public var firstKana: String?
     public var email: String?
 }

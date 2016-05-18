@@ -760,6 +760,7 @@
 				4F069BC31CEC063200A70DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F069BC71CEC063200A70DD3 /* Build configuration list for PBXNativeTarget "FKContactsBuildTests" */ = {
 			isa = XCConfigurationList;
@@ -768,6 +769,7 @@
 				4F069BC51CEC063200A70DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F0E3FD61CEB26160056CD59 /* Build configuration list for PBXProject "FKContacts" */ = {
 			isa = XCConfigurationList;

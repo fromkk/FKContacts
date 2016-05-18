@@ -71,7 +71,7 @@ extension ABContacts: FKContactsProtocol
                 if let emails: [String] = ABMultiValueCopyArrayOfAllValues(emailsRef).takeUnretainedValue() as NSArray as? [String]
                 {
                     emails.forEach({ (email: String) in
-                        result.append(FKContactItem(lastName: lastName, firstName: firstName, lastKane: lastKana, firstKana: firstKana, email: email))
+                        result.append(FKContactItem(lastName: lastName, firstName: firstName, lastKana: lastKana, firstKana: firstKana, email: email))
                     })
                 }
             }
