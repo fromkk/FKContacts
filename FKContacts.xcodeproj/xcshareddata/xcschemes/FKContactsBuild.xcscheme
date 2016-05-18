@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F0E3FDA1CEB26160056CD59"
-               BuildableName = "FKContacts.app"
-               BlueprintName = "FKContacts"
+               BlueprintIdentifier = "4F069BA91CEC063200A70DD3"
+               BuildableName = "FKContactsBuild.framework"
+               BlueprintName = "FKContactsBuild"
                ReferencedContainer = "container:FKContacts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,36 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F0E3FEE1CEB26160056CD59"
-               BuildableName = "FKContactsTests.xctest"
-               BlueprintName = "FKContactsTests"
-               ReferencedContainer = "container:FKContacts.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F0E3FF91CEB26160056CD59"
-               BuildableName = "FKContactsUITests.xctest"
-               BlueprintName = "FKContactsUITests"
-               ReferencedContainer = "container:FKContacts.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F0E3FDA1CEB26160056CD59"
-            BuildableName = "FKContacts.app"
-            BlueprintName = "FKContacts"
-            ReferencedContainer = "container:FKContacts.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F0E3FDA1CEB26160056CD59"
-            BuildableName = "FKContacts.app"
-            BlueprintName = "FKContacts"
+            BlueprintIdentifier = "4F069BA91CEC063200A70DD3"
+            BuildableName = "FKContactsBuild.framework"
+            BlueprintName = "FKContactsBuild"
             ReferencedContainer = "container:FKContacts.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F0E3FDA1CEB26160056CD59"
-            BuildableName = "FKContacts.app"
-            BlueprintName = "FKContacts"
+            BlueprintIdentifier = "4F069BA91CEC063200A70DD3"
+            BuildableName = "FKContactsBuild.framework"
+            BlueprintName = "FKContactsBuild"
             ReferencedContainer = "container:FKContacts.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
