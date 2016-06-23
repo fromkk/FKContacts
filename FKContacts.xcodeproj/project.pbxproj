@@ -27,6 +27,10 @@
 		4F0E401A1CEB2B420056CD59 /* CNContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40161CEB2B420056CD59 /* CNContacts.swift */; };
 		4F0E401B1CEB2B420056CD59 /* FKContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40171CEB2B420056CD59 /* FKContacts.swift */; };
 		4F0E401C1CEB2B420056CD59 /* FKContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40181CEB2B420056CD59 /* FKContactItem.swift */; };
+		AD6CD1121D1BD0B300BD852C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6CD10E1D1BD0B300BD852C /* AddressBook.framework */; };
+		AD6CD1131D1BD0B300BD852C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6CD10F1D1BD0B300BD852C /* AddressBookUI.framework */; };
+		AD6CD1141D1BD0B300BD852C /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6CD1101D1BD0B300BD852C /* Contacts.framework */; };
+		AD6CD1151D1BD0B300BD852C /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6CD1111D1BD0B300BD852C /* ContactsUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		4F0E40161CEB2B420056CD59 /* CNContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContacts.swift; sourceTree = "<group>"; };
 		4F0E40171CEB2B420056CD59 /* FKContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKContacts.swift; sourceTree = "<group>"; };
 		4F0E40181CEB2B420056CD59 /* FKContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKContactItem.swift; sourceTree = "<group>"; };
+		AD6CD10E1D1BD0B300BD852C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		AD6CD10F1D1BD0B300BD852C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		AD6CD1101D1BD0B300BD852C /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		AD6CD1111D1BD0B300BD852C /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6CD1121D1BD0B300BD852C /* AddressBook.framework in Frameworks */,
+				AD6CD1131D1BD0B300BD852C /* AddressBookUI.framework in Frameworks */,
+				AD6CD1141D1BD0B300BD852C /* Contacts.framework in Frameworks */,
+				AD6CD1151D1BD0B300BD852C /* ContactsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +188,7 @@
 				4F069BAB1CEC063200A70DD3 /* FKContactsBuild */,
 				4F069BB91CEC063200A70DD3 /* FKContactsBuildTests */,
 				4F0E3FDC1CEB26160056CD59 /* Products */,
+				AD6CD10D1D1BD0B300BD852C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +244,17 @@
 				4F0E40161CEB2B420056CD59 /* CNContacts.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD6CD10D1D1BD0B300BD852C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD6CD10E1D1BD0B300BD852C /* AddressBook.framework */,
+				AD6CD10F1D1BD0B300BD852C /* AddressBookUI.framework */,
+				AD6CD1101D1BD0B300BD852C /* Contacts.framework */,
+				AD6CD1111D1BD0B300BD852C /* ContactsUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,20 +375,25 @@
 				TargetAttributes = {
 					4F069BA91CEC063200A70DD3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					4F069BB21CEC063200A70DD3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4F0E3FDA1CEB26160056CD59;
 					};
 					4F0E3FDA1CEB26160056CD59 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					4F0E3FEE1CEB26160056CD59 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4F0E3FDA1CEB26160056CD59;
 					};
 					4F0E3FF91CEB26160056CD59 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4F0E3FDA1CEB26160056CD59;
 					};
 				};
@@ -546,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsBuild";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -567,6 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsBuild";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -580,6 +611,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsBuildTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKContacts.app/FKContacts";
 			};
 			name = Debug;
@@ -591,6 +623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsBuildTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKContacts.app/FKContacts";
 			};
 			name = Release;
@@ -688,6 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -701,6 +735,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContacts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -712,6 +747,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKContacts.app/FKContacts";
 			};
 			name = Debug;
@@ -724,6 +760,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKContacts.app/FKContacts";
 			};
 			name = Release;
@@ -735,6 +772,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = FKContacts;
 			};
 			name = Debug;
@@ -746,6 +784,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timers-inc.FKContactsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = FKContacts;
 			};
 			name = Release;

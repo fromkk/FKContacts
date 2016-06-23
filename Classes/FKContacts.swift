@@ -8,23 +8,23 @@
 
 import Foundation
 
-public enum FKContactsErrorType: ErrorType
+public enum FKContactsErrorType: ErrorProtocol
 {
-    case NotAllowed
-    case Denied
-    case FetchFailed
+    case notAllowed
+    case denied
+    case fetchFailed
 }
 
 public enum FKContactsPermissionResults: Int
 {
-    case Allowed
-    case Denied
+    case allowed
+    case denied
 }
 
 public protocol FKContactsRequestPermission
 {
     associatedtype FKContactRequestPermissionCompleteion = (status: FKContactsPermissionResults) -> Void
-    static func requestPermission(completion: FKContactRequestPermissionCompleteion) -> Void
+    static func requestPermission(_ completion: FKContactRequestPermissionCompleteion) -> Void
 }
 
 public final class FKContacts {}
@@ -32,7 +32,7 @@ public final class FKContacts {}
 extension FKContacts: FKContactsRequestPermission
 {
     public typealias FKContactRequestPermissionCompleteion = (status: FKContactsPermissionResults) -> Void
-    public static func requestPermission(completion: FKContactRequestPermissionCompleteion) {
+    public static func requestPermission(_ completion: FKContactRequestPermissionCompleteion) {
         if #available(iOS 9.0, *) {
             CNContact.requestPermission(completion)
         } else {

@@ -8,6 +8,7 @@
 
 import Foundation
 import Contacts
+import ContactsUI
 
 @available(iOS 9.0, *)
 public final class CNContact {}
@@ -16,31 +17,31 @@ public final class CNContact {}
 extension CNContact: FKContactsRequestPermission
 {
     public typealias FKContactRequestPermissionCompleteion = (status: FKContactsPermissionResults) -> Void
-    public static func requestPermission(completion: FKContactRequestPermissionCompleteion) {
-        let status: CNAuthorizationStatus = CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts)
-        if status == CNAuthorizationStatus.NotDetermined
+    public static func requestPermission(_ completion: FKContactRequestPermissionCompleteion) {
+        let status: CNAuthorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+        if status == CNAuthorizationStatus.notDetermined
         {
             let store: CNContactStore = CNContactStore()
-            store.requestAccessForEntityType(CNEntityType.Contacts, completionHandler: { (res, error) in
+            store.requestAccess(for: CNEntityType.contacts, completionHandler: { (res, error) in
                 if res
                 {
-                    completion(status: FKContactsPermissionResults.Allowed)
+                    completion(status: FKContactsPermissionResults.allowed)
                 } else
                 {
-                    completion(status: FKContactsPermissionResults.Denied)
+                    completion(status: FKContactsPermissionResults.denied)
                 }
             })
         } else
         {
             switch status
             {
-            case CNAuthorizationStatus.Authorized:
-                completion(status: FKContactsPermissionResults.Allowed)
+            case CNAuthorizationStatus.authorized:
+                completion(status: FKContactsPermissionResults.allowed)
                 break
-            case CNAuthorizationStatus.Restricted:
+            case CNAuthorizationStatus.restricted:
                 fallthrough
-            case CNAuthorizationStatus.Denied:
-                completion(status: FKContactsPermissionResults.Denied)
+            case CNAuthorizationStatus.denied:
+                completion(status: FKContactsPermissionResults.denied)
                 break
             default:
                 break
@@ -63,7 +64,7 @@ extension CNContact: FKContactsProtocol
             CNContactEmailAddressesKey
             ])
         do {
-            try store.enumerateContactsWithFetchRequest(request) { (contact, stop) in
+            try store.enumerateContacts(with: request) { (contact, stop) in
                 contact.emailAddresses.forEach { (labeledValue: CNLabeledValue) in
                     if let emailAddress: String = labeledValue.value as? String
                     {
@@ -72,7 +73,7 @@ extension CNContact: FKContactsProtocol
                 }
             }
         } catch {
-            throw FKContactsErrorType.FetchFailed
+            throw FKContactsErrorType.fetchFailed
         }
         
         return result

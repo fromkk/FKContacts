@@ -8,35 +8,36 @@
 
 import Foundation
 import AddressBook
+import AddressBookUI
 
 public final class ABContacts {}
 
 extension ABContacts: FKContactsRequestPermission
 {
     public typealias ContactRequestPermissionCompleteion = (status: FKContactsPermissionResults) -> Void
-    public static func requestPermission(completion: ContactRequestPermissionCompleteion) {
+    public static func requestPermission(_ completion: ContactRequestPermissionCompleteion) {
         let status :ABAuthorizationStatus = ABAddressBookGetAuthorizationStatus()
-        if status == ABAuthorizationStatus.NotDetermined
+        if status == ABAuthorizationStatus.notDetermined
         {
             ABAddressBookRequestAccessWithCompletion(nil, { (granted, error) in
                 if granted
                 {
-                    completion(status: FKContactsPermissionResults.Allowed)
+                    completion(status: FKContactsPermissionResults.allowed)
                 } else
                 {
-                    completion(status: FKContactsPermissionResults.Denied)
+                    completion(status: FKContactsPermissionResults.denied)
                 }
             })
         } else {
             switch status
             {
-            case ABAuthorizationStatus.Authorized:
-                completion(status: FKContactsPermissionResults.Allowed)
+            case ABAuthorizationStatus.authorized:
+                completion(status: FKContactsPermissionResults.allowed)
                 break
-            case ABAuthorizationStatus.Denied:
+            case ABAuthorizationStatus.denied:
                 fallthrough
-            case ABAuthorizationStatus.Restricted:
-                completion(status: FKContactsPermissionResults.Denied)
+            case ABAuthorizationStatus.restricted:
+                completion(status: FKContactsPermissionResults.denied)
                 break
             default:
                 break
@@ -50,22 +51,22 @@ extension ABContacts: FKContactsProtocol
 {
     public static func fetchContacts() throws -> [FKContactItem] {
         var err : Unmanaged<CFError>? = nil
-        let addressBookRef: ABAddressBookRef? = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
+        let addressBookRef: ABAddressBook? = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
         if let _ = err
         {
-            throw FKContactsErrorType.FetchFailed
+            throw FKContactsErrorType.fetchFailed
         }
         
         
-        let tmp: [ABRecordRef] = ABAddressBookCopyArrayOfAllPeople(addressBookRef).takeRetainedValue() as [ABRecordRef]
+        let tmp: [ABRecord] = ABAddressBookCopyArrayOfAllPeople(addressBookRef).takeRetainedValue() as [ABRecord]
         var result: [FKContactItem] = []
-        tmp.forEach { (person: ABRecordRef) in
+        tmp.forEach { (person: ABRecord) in
             let lastName: String? = ABRecordCopyValue(person, kABPersonLastNameProperty)?.takeRetainedValue() as? String
             let firstName: String? = ABRecordCopyValue(person, kABPersonFirstNameProperty)?.takeRetainedValue() as? String
             let lastKana: String? = ABRecordCopyValue(person, kABPersonLastNamePhoneticProperty)?.takeRetainedValue() as? String
             let firstKana: String? = ABRecordCopyValue(person, kABPersonFirstNamePhoneticProperty)?.takeRetainedValue() as? String
             
-            let emailsRef :ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue() as ABMultiValueRef
+            let emailsRef :ABMultiValue = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue() as ABMultiValue
             if 0 < ABMultiValueGetCount(emailsRef)
             {
                 if let emails: [String] = ABMultiValueCopyArrayOfAllValues(emailsRef).takeUnretainedValue() as NSArray as? [String]
