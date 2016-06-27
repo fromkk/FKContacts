@@ -8,6 +8,7 @@
 
 import Foundation
 import Contacts
+import ContactsUI
 
 @available(iOS 9.0, *)
 public final class CNContact {}

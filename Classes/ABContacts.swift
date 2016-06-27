@@ -8,6 +8,7 @@
 
 import Foundation
 import AddressBook
+import AddressBookUI
 
 public final class ABContacts {}
 
