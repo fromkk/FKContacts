@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         FKContacts.requestPermission { (status) in
             switch status
             {
-            case FKContactsPermissionResults.Allowed:
+            case FKContactsPermissionResults.allowed:
                 print("allowed!!!")
                 
                 do {
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
                     print("failed...")
                 }
                 break
-            case FKContactsPermissionResults.Denied:
+            case FKContactsPermissionResults.denied:
                 print("denied...")
                 break
             }
