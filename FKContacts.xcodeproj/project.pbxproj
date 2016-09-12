@@ -29,8 +29,8 @@
 		4F0E401C1CEB2B420056CD59 /* FKContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E40181CEB2B420056CD59 /* FKContactItem.swift */; };
 		4FAEF0B31D20D1D100FED583 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0AF1D20D1D100FED583 /* AddressBook.framework */; };
 		4FAEF0B41D20D1D100FED583 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0B01D20D1D100FED583 /* AddressBookUI.framework */; };
-		4FAEF0B51D20D1D100FED583 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0B11D20D1D100FED583 /* Contacts.framework */; };
-		4FAEF0B61D20D1D100FED583 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0B21D20D1D100FED583 /* ContactsUI.framework */; };
+		4FAEF0B51D20D1D100FED583 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0B11D20D1D100FED583 /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4FAEF0B61D20D1D100FED583 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAEF0B21D20D1D100FED583 /* ContactsUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
