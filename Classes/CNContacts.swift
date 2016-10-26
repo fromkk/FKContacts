@@ -22,13 +22,16 @@ extension CNContact: FKContactsRequestPermission
         {
             let store: CNContactStore = CNContactStore()
             store.requestAccess(for: CNEntityType.contacts, completionHandler: { (res, error) in
-                if res
-                {
-                    completion(FKContactsPermissionResults.allowed)
-                } else
-                {
-                    completion(FKContactsPermissionResults.denied)
+                DispatchQueue.main.async {
+                    if res
+                    {
+                        completion(FKContactsPermissionResults.allowed)
+                    } else
+                    {
+                        completion(FKContactsPermissionResults.denied)
+                    }
                 }
+
             })
         } else
         {

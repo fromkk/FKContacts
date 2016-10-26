@@ -19,12 +19,14 @@ extension ABContacts: FKContactsRequestPermission
         if status == ABAuthorizationStatus.notDetermined
         {
             ABAddressBookRequestAccessWithCompletion(nil, { (granted, error) in
-                if granted
-                {
-                    completion(FKContactsPermissionResults.allowed)
-                } else
-                {
-                    completion(FKContactsPermissionResults.denied)
+                DispatchQueue.main.async {
+                    if granted
+                    {
+                        completion(FKContactsPermissionResults.allowed)
+                    } else
+                    {
+                        completion(FKContactsPermissionResults.denied)
+                    }
                 }
             })
         } else {
@@ -33,9 +35,7 @@ extension ABContacts: FKContactsRequestPermission
             case ABAuthorizationStatus.authorized:
                 completion(FKContactsPermissionResults.allowed)
                 break
-            case ABAuthorizationStatus.denied:
-                fallthrough
-            case ABAuthorizationStatus.restricted:
+            case ABAuthorizationStatus.denied, ABAuthorizationStatus.restricted:
                 completion(FKContactsPermissionResults.denied)
                 break
             default:
@@ -50,13 +50,12 @@ extension ABContacts: FKContactsProtocol
 {
     public static func fetchContacts() throws -> [FKContactItem] {
         var err : Unmanaged<CFError>? = nil
-        let addressBookRef: ABAddressBook? = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
+        let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
         if let _ = err
         {
             throw FKContactsErrorType.fetchFailed
         }
-        
-        
+
         let tmp: [ABRecord] = ABAddressBookCopyArrayOfAllPeople(addressBookRef).takeRetainedValue() as [ABRecord]
         var result: [FKContactItem] = []
         tmp.forEach { (person: ABRecord) in
@@ -64,8 +63,10 @@ extension ABContacts: FKContactsProtocol
             let firstName: String? = ABRecordCopyValue(person, kABPersonFirstNameProperty)?.takeRetainedValue() as? String
             let lastKana: String? = ABRecordCopyValue(person, kABPersonLastNamePhoneticProperty)?.takeRetainedValue() as? String
             let firstKana: String? = ABRecordCopyValue(person, kABPersonFirstNamePhoneticProperty)?.takeRetainedValue() as? String
-            
-            let emailsRef :ABMultiValue = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue() as ABMultiValue
+
+            guard let emailsRef :ABMultiValue = ABRecordCopyValue(person, kABPersonEmailProperty)?.takeRetainedValue() as ABMultiValue? else {
+                return
+            }
             if 0 < ABMultiValueGetCount(emailsRef)
             {
                 if let emails: [String] = ABMultiValueCopyArrayOfAllValues(emailsRef).takeUnretainedValue() as NSArray as? [String]
