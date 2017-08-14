@@ -17,18 +17,14 @@ class ViewController: UIViewController {
             switch status
             {
             case FKContactsPermissionResults.allowed:
-                print("allowed!!!")
-                
                 do {
                     let result: [FKContactItem] = try FKContacts.fetchContacts()
-                    print("result! \(result)")
                 } catch
                 {
                     print("failed...")
                 }
                 break
             case FKContactsPermissionResults.denied:
-                print("denied...")
                 break
             }
         }
